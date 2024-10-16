@@ -59,8 +59,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt = $pdo->prepare($sql)) {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
             if ($stmt->execute([$name, $email, $hashed_password])) {
-                // Redirect to login page
-                redirect('login.php');
+                session_start();
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['user_name'] = $user['name'];
+                // Redirect to profile page
+                redirect('tasks.php');
             } else {
                 echo "Something went wrong. Please try again.";
             }
