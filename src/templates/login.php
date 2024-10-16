@@ -32,13 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(1, $email, PDO::PARAM_STR);
 
             $data = $stmt->execute();
-            var_dump($data);
+
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            var_dump($user);
+
 
             if ($user) {
 
-                var_dump($user);
+
                 if (password_verify($password, $user['password'])) {
                     // Password is correct, start a new session
                     session_start();

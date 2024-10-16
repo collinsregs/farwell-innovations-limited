@@ -1,16 +1,31 @@
 <?php
-// includes/config.php
 
-define('APP_NAME', 'My PHP App');
-define('APP_VERSION', '1.0.0');
-define('ENVIRONMENT', 'development');
+
+if (!defined('APP_NAME')) {
+    define('APP_NAME', 'My PHP App');
+}
+
+if (!defined('APP_VERSION')) {
+    define('APP_VERSION', '1.0.0');
+}
+
+if (!defined('ENVIRONMENT')) {
+    define('ENVIRONMENT', 'development');
+}
 
 // Database configuration for SQLite
-define('DB_TYPE', 'sqlite');
-define('DB_PATH', __DIR__ . '/database/database.db'); // Adjust the path as needed
+if (!defined('DB_TYPE')) {
+    define('DB_TYPE', 'sqlite');
+}
+
+if (!defined('DB_PATH')) {
+    define('DB_PATH', __DIR__ . '/database/database.db'); // Adjust the path as needed
+}
 
 // Base URL of the application
-define('BASE_URL', 'http://localhost/');
+if (!defined('BASE_URL')) {
+    define('BASE_URL', 'http://localhost/'); // Adjust as needed
+}
 
 if (ENVIRONMENT === 'development') {
     ini_set('display_errors', 1);
@@ -22,5 +37,5 @@ if (ENVIRONMENT === 'development') {
     error_reporting(0);
 }
 
-// Other configuration constants can be added here
+
 ?>
