@@ -1,0 +1,16 @@
+{
+    "name": "colli/farwell_innovations_limited",
+    "description": "simple php project",
+    "autoload": {
+        "psr-4": {
+            "Colli\\FarwellInnovationsLimited\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "collinsregs",
+            "email": "collinsregs@gmail.com"
+        }
+    ],
+    "require": {}
+}
