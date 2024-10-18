@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "UPDATE users SET name = ?, email = ? WHERE id = ?";
         $stmt = $pdo->prepare($sql);
         if ($stmt->execute([$name, $email, $user_id])) {
-            $update_success = "Profile updated successfully.";
+            setToast("Profile Updated.", 'success');
             $_SESSION['user_name'] = $name; // Update session name
         } else {
             echo "Something went wrong. Please try again.";
