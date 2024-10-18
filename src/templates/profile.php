@@ -60,27 +60,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
-<h2>Your Profile</h2>
-<?php
-if (!empty($update_success)) {
-    echo '<div>' . $update_success . '</div>';
-}
-?>
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-    <div>
-        <label>Name</label>
-        <input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>">
-        <span><?php echo $name_err; ?></span>
-    </div>
-    <div>
-        <label>Email</label>
-        <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>">
-        <span><?php echo $email_err; ?></span>
-    </div>
-    <div>
-        <input type="submit" value="Update Profile">
-    </div>
-</form>
+<div class="main-container">
+    <h2>Your Profile</h2>
+    <?php
+    if (!empty($update_success)) {
+        echo '<div>' . $update_success . '</div>';
+    }
+    ?>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <div>
+            <label>Name</label>
+            <input type="text" name="name" value="<?php echo htmlspecialchars($name); ?>">
+            <span><?php echo $name_err; ?></span>
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>">
+            <span><?php echo $email_err; ?></span>
+        </div>
+        <div>
+            <input type="submit" value="Update Profile">
+        </div>
+    </form>
+</div>
 
 <?php include '../includes/footer.php'; ?>

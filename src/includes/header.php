@@ -8,6 +8,7 @@ include 'config.php';
     <meta charset="UTF-8">
     <title><?php echo $title ?? 'TODO'; ?></title>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>templates/assets/css/styles.css">
+    <script src="assets/js/scripts.js"></script>
 </head>
 
 <body>
